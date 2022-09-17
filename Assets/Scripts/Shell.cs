@@ -79,13 +79,7 @@ public class Shell : MonoBehaviour
             if (trbody == null)
                 continue;
             trbody.AddExplosionForce(_explosionForce, transform.position, _explosionRadius);
-
-            if (collider.gameObject.CompareTag("Player")){
-                // Apply effects to tanks
-                Tank tank = collider.GetComponent<Tank>();
-                tank.TakeDamage( CalculateDamage(tank.transform.position) );
-            }
-            else if (collider.gameObject.CompareTag("Enemy")){
+            if (collider.gameObject.CompareTag("Enemy")){
                 // Apply effects to tanks
                 Debug.Log("Enemy hit!");
                 AITank tank = collider.GetComponent<AITank>();
