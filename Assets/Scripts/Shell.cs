@@ -85,6 +85,10 @@ public class Shell : MonoBehaviour
                 AITank tank = collider.GetComponent<AITank>();
                 tank.TakeDamage( CalculateDamage(tank.transform.position) );
             }
+            else if (collider.gameObject.CompareTag("Target")){
+                Tank tank = collider.GetComponent<Tank>();
+                tank.TakeDamage( CalculateDamage(tank.transform.position) );
+            }
         }
         
         Destroy(gameObject);
